@@ -30,7 +30,7 @@ workflow {
 }
 ```
 
-<img width="1920" height="1200" alt="Screenshot from 2026-05-20 14-41-38" src="https://github.com/user-attachments/assets/8be8f71b-95f6-4c61-a2d5-0829c84a168a" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/f844a69b-0b81-458c-9149-3aa99da840fe" />
 
 Example prompts that can be tested across different AI models:
 
