@@ -67,7 +67,7 @@ Fix the error in this Nextflow script with the smallest possible code modificati
 [PASTE CODE HERE]
 ```
 ## Models Benchmarking
-Here, We'll test Prompt 5 — Minimal Fix Only On different AI Models, We'll use `ChatGPT plus`, and `Gemini 3.5 Flash`, to see how each model can debug that error.
+Here, we'll test Prompt 5 — Minimal Fix Only On different AI Models, We'll use `ChatGPT plus`, and `Gemini 3.5 Flash`, to see how each model can debug that error.
 
 ### User:
 
