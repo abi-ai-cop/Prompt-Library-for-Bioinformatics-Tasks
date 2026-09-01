@@ -139,6 +139,11 @@ touch missing_file.txt
 
 This creates an empty file named `missing_file.txt`, so the `cat` command no longer fails.
 
+### Result:
+
+<img width="783" height="282" alt="image" src="https://github.com/user-attachments/assets/f3d6e49e-1da5-4a26-9fb3-8a681d0971d4" />
+
+As you can see here. ChatGpt solution worked perfectly and fixed the root error
 
 ### Gemeni Flash Response:
 The error in this script happens because `cat missing_file.txt` tries to read a file that doesn't exist. By default, Nextflow catches this non-zero exit code and crashes the pipeline.
@@ -174,7 +179,19 @@ workflow {
 ### What changed?
 
 * **Added `ignoreError true`:** This directive allows the process to finish successfully and output `hello.txt`, ignoring the fact that `cat missing_file.txt` failed.
-
 *(Note: If you actually needed `missing_file.txt` to exist, you would instead pass it into the process via an `input:` block, but `ignoreError true` is the cleanest way to bypass the explicit failure in the script as written.)*
 
-As you can see, each AI model approached the same debugging task from a completely different perspective.  ChatGPT focused on fixing the root cause of the error directly by creating the missing file with a minimal code modification (`touch missing_file.txt`), which preserves the intended workflow execution and prevents the pipeline from failing. In contrast, Gemini 3.5 Flash handled the problem from a workflow-management perspective by adding `ignoreError true`, allowing the process to continue even though the underlying issue still exists. This is how different AI models may prioritize different debugging philosophies: some models aim to resolve the actual source of failure, while others focus on maintaining pipeline execution and fault tolerance. You can see also the importance of prompt engineering in bioinformatics coding assistance, where the same prompt can produce substantially different interpretations, fixes, and best-practice recommendations across models.
+### Result
+
+<img width="814" height="268" alt="image" src="https://github.com/user-attachments/assets/61452bf2-8367-4c99-973f-4b74231b8378" />
+
+Gemini response resulted with another error as the suggested directive is not even from Nextflow defined directives. The correct directive should be `errorStrategy 'ignore'`. and when running the workflow again with this directive it will work well as you can see below
+
+<img width="897" height="296" alt="image" src="https://github.com/user-attachments/assets/d108d1e4-1176-4c5f-8bad-1d067ac31fba" />
+
+Look at the Note section as it is showing that the workflow had an ignored error but it continued to run without terminating the entire process.
+
+### Conclusion:
+The two AI models approached the same debugging task from substantially different perspectives. ChatGPT focused on addressing the immediate source of the pipeline failure by creating the missing file through a minimal code modification (`touch missing_file.txt`). Although this allows the workflow to proceed, it does not necessarily establish why the file was missing or whether creating an empty file is biologically or computationally appropriate. In contrast, Gemini 3.5 Flash approached the problem from a workflow-management perspective by suggesting the use of `ignoreError true`, allowing the process to continue despite the underlying error. However, this recommendation represents a form of AI hallucination, as Gemini invented `ignoreError true`, and it was not an appropriate or valid solution for the specific workflow context and would effectively mask a genuine pipeline failure rather than resolve its underlying cause.
+
+This example highlights how different AI models can adopt fundamentally different debugging philosophies: one may attempt to modify the input or environment to allow execution to continue, while another may prioritize workflow robustness by suppressing errors. Importantly, neither approach necessarily addresses the most critical diagnostic question: **why was the expected file missing in the first place, and was its absence intentional?** This demonstrates the importance of prompt engineering and human validation in AI-assisted bioinformatics coding, where the same prompt can lead to substantially different interpretations, proposed fixes, and recommendations for best practices. In computational biology workflows, where silently bypassing an error or generating artificial input files can compromise downstream analyses, AI-generated solutions should therefore be evaluated not only for whether they make a pipeline execute successfully, but also for whether they preserve the intended scientific logic of the workflow.
