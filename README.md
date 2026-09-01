@@ -141,7 +141,7 @@ This creates an empty file named `missing_file.txt`, so the `cat` command no lon
 
 ### Result:
 
-<img width="783" height="282" alt="image" src="https://github.com/user-attachments/assets/f3d6e49e-1da5-4a26-9fb3-8a681d0971d4" />
+<img width="783" height="282" alt="Screenshot from 2026-08-31 21-47-14" src="https://github.com/user-attachments/assets/016e518d-51a5-48c9-ac9e-a6dc825f1afe" />
 
 As you can see here. ChatGpt solution worked perfectly and fixed the root error
 
@@ -183,11 +183,11 @@ workflow {
 
 ### Result
 
-<img width="814" height="268" alt="image" src="https://github.com/user-attachments/assets/61452bf2-8367-4c99-973f-4b74231b8378" />
+<img width="814" height="268" alt="Screenshot from 2026-08-31 21-50-43" src="https://github.com/user-attachments/assets/49e609ba-ad16-4e47-9fdb-1367c0805b30" />
 
 Gemini response resulted with another error as the suggested directive is not even from Nextflow defined directives. The correct directive should be `errorStrategy 'ignore'`. and when running the workflow again with this directive it will work well as you can see below
 
-<img width="897" height="296" alt="image" src="https://github.com/user-attachments/assets/d108d1e4-1176-4c5f-8bad-1d067ac31fba" />
+<img width="897" height="296" alt="Screenshot from 2026-08-31 22-05-35" src="https://github.com/user-attachments/assets/c83eb1be-abc4-4b83-9114-d9826d163b4d" />
 
 Look at the Note section as it is showing that the workflow had an ignored error but it continued to run without terminating the entire process.
 
