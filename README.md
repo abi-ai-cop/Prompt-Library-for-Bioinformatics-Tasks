@@ -183,11 +183,11 @@ workflow {
 
 ### Result
 
-<img width="814" height="268" alt="Screenshot from 2026-08-31 21-50-43" src="https://github.com/user-attachments/assets/49e609ba-ad16-4e47-9fdb-1367c0805b30" />
+<img width="1472" height="454" alt="image" src="https://github.com/user-attachments/assets/844a6e86-101f-44eb-b963-baac4e780cf2" />
 
 Gemini response resulted with another error as the suggested directive is not even from Nextflow defined directives. The correct directive should be `errorStrategy 'ignore'`. and when running the workflow again with this directive it will work well as you can see below
 
-<img width="897" height="296" alt="Screenshot from 2026-08-31 22-05-35" src="https://github.com/user-attachments/assets/c83eb1be-abc4-4b83-9114-d9826d163b4d" />
+<img width="1472" height="485" alt="image" src="https://github.com/user-attachments/assets/6f88d69e-e135-42bf-a807-6beacd337514" />
 
 Look at the Note section as it is showing that the workflow had an ignored error but it continued to run without terminating the entire process.
 
