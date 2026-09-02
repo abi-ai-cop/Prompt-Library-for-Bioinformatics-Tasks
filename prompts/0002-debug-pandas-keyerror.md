@@ -8,7 +8,7 @@
 | **Domain** | Coding & pipelines |
 | **Organism or data type** | Any; gene-level count matrix (CSV) |
 | **Author** | Aïda Ouangraoua, Université de Sherbrooke, ORCID: 0000-0002-2040-4948 |
-| **Date tested** | {{2026-08-31}} |
+| **Date tested** | 2026-08-31 |
 | **Models tested** | GPT-5.6 Luna, Gemini 2.5 Flash |
 | **Licence** | CC BY 4.0 |
 
