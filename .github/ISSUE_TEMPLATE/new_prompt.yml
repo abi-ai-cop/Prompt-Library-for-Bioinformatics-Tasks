@@ -1,0 +1,134 @@
+name: Submit a prompt
+description: Contribute a tested prompt to the library. Takes about 20 minutes.
+title: "[Prompt] "
+labels: ["new-prompt", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form if you do not work with Git. A maintainer will convert your
+        submission into a file in `prompts/`. You keep authorship.
+        Please submit a prompt you have **actually run**.
+  - type: input
+    id: title
+    attributes:
+      label: Short title
+      description: Task-first, e.g. "Debug a pandas KeyError in a counts pipeline"
+    validations: { required: true }
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      options:
+        - Literature & writing
+        - Coding & pipelines
+        - Genomics & annotation
+        - Other
+    validations: { required: true }
+  - type: input
+    id: organism
+    attributes:
+      label: Organism or data type
+      placeholder: "e.g. Plasmodium falciparum WGS; human RNA-seq; not applicable"
+    validations: { required: true }
+  - type: input
+    id: author
+    attributes:
+      label: Author — name, affiliation, ORCID
+    validations: { required: true }
+  - type: input
+    id: model
+    attributes:
+      label: Models and versions tested
+      description: >-
+        Version matters. "GPT-5.5", not "ChatGPT". List every model you tried.
+    validations: { required: true }
+  - type: input
+    id: date
+    attributes:
+      label: Date tested (YYYY-MM-DD)
+    validations: { required: true }
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: One sentence. What does this accomplish, for whom?
+    validations: { required: true }
+  - type: textarea
+    id: context
+    attributes:
+      label: Biological and computational context
+      description: >-
+        Assumed data type, experimental design, reference genome or annotation
+        build, available compute, software installed. State assumptions explicitly.
+    validations: { required: true }
+  - type: textarea
+    id: task
+    attributes:
+      label: The task
+      description: >-
+        The exact shared input every variant is tested against — failing script,
+        variant table, paper set. This is what makes the variants comparable.
+      render: text
+    validations: { required: true }
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt variants
+      description: >-
+        One task, several prompts for it. Name each variant by its strategy
+        (minimal instruction, expert persona, teaching style, production
+        optimisation, minimal fix). Verbatim text. Mark variable parts with
+        {{DOUBLE_BRACES}}. One variant is accepted but scores lower on Robustness.
+      render: text
+    validations: { required: true }
+  - type: textarea
+    id: comparison
+    attributes:
+      label: Cross-model comparison
+      description: >-
+        Take at least one variant, run it on two or more models, and say what
+        differed. Where the models diverge, does the divergence matter
+        scientifically? Leave blank only if you tested a single model.
+      render: text
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output format
+    validations: { required: true }
+  - type: textarea
+    id: example
+    attributes:
+      label: Worked example
+      description: A short excerpt of a real response. Truncate rather than paste pages.
+    validations: { required: true }
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations
+    validations: { required: true }
+  - type: textarea
+    id: failures
+    attributes:
+      label: Failure modes observed
+      description: >-
+        Required. Format each as: observation — model + version — date — how you
+        detected it. Entries with this section empty are not accepted.
+    validations: { required: true }
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation performed
+      description: How did you check the output was correct?
+    validations: { required: true }
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have actually run this prompt and can describe its output.
+          required: true
+        - label: This submission contains no patient-identifiable data, restricted data, or credentials.
+          required: true
+        - label: I agree to release this contribution under CC BY 4.0.
+          required: true

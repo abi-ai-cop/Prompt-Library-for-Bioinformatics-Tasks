@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "ABI AI CoP Shared Prompt Library for Bioinformatics"
+message: "If you use this library, please cite it using these metadata."
+type: dataset
+abstract: >-
+  A community-authored, peer-reviewed collection of tested prompts for
+  LLM-assisted bioinformatics workflows, developed by the African
+  Bioinformatics Institute Community of Practice on AI for Bioinformatics,
+  with emphasis on African biological data, documented model failure modes,
+  and version-stamped re-validation.
+authors:
+  - given-names: "{{GIVEN}}"
+    family-names: "{{FAMILY}}"
+    affiliation: "{{AFFILIATION}}"
+    orcid: "https://orcid.org/{{ORCID}}"
+repository-code: "https://github.com/{{ORG}}/{{REPO}}"
+url: "https://www.bioinformaticsinstitute.africa/communities-practice/Artificial-Intelligence"
+license: CC-BY-4.0
+version: "0.1.0"
+date-released: "2026-12-{{DD}}"
+keywords:
+  - bioinformatics
+  - large language models
+  - prompt engineering
+  - reproducibility
+  - African genomics

@@ -1,197 +1,90 @@
-# Prompt-Library-for-Bioinformatics-Tasks
+# ABI AI CoP — Shared Prompt Library for Bioinformatics
 
-A curated collection of high-quality prompts designed to assist with a wide range of bioinformatics workflows and analyses using AI tools. This collection provides valuable resources for prompt engineering, including training materials, educational resources, and reusable high-quality prompts for genome annotation, literature review, variant interpretation, workflow generation, coding assistance, protein analysis, scientific writing, and more.
+A community-authored, citable collection of tested prompts for LLM-assisted
+bioinformatics, built by the **ABI Community of Practice on AI for Bioinformatics**.
 
-## Coding Assistance
+**Status:** v0.1 in progress · target release December 2026
 
-AI-powered prompt engineering can significantly improve coding assistance in bioinformatics by helping researchers debug workflows, optimize pipelines, generate scripts, explain errors, and improve reproducibility. Modern AI models can assist with workflow languages such as Nextflow, WDL, Snakemake, Bash, Python, and R, making it easier for bioinformaticians to identify issues in complex HPC and sequencing analysis pipelines. By providing clear and structured prompts, users can compare how different AI models interpret, debug, and improve the same piece of code.
+| Entry | Domain | State |
+|---|---|---|
+| [0001](prompts/0001-nextflow-failing-process-debug.md) Nextflow process debugging | Coding & pipelines | **Tested** — 5 variants x 2 models, 3 failure modes confirmed at runtime |
+| [0002](prompts/0002-debug-pandas-keyerror.md) pandas KeyError debugging | Coding & pipelines | **Tested** — 3 variants × 2 models, reproducible fixture, 3 failure modes |
+| [0003](prompts/0003-literature-synthesis-table.md) Literature synthesis | Literature & writing | *Untested draft — Owner :Yaa Adutwumwaa Obeng* |
+| [0004](prompts/0004-plasmodium-variant-interpretation.md) *P. falciparum* variant interpretation | Genomics & annotation | *Untested draft — owner needed* |
 
-For example, the following Nextflow workflow will generate an error because the file missing_file.txt does not exist:
+The entries are marked tested only after they have been run and the results recorded.
 
-```nextflow
-#!/usr/bin/env nextflow
+---
 
-nextflow.enable.dsl=2
+## Specificity of the library
 
-process SAY_HELLO {
 
-    output:
-    path "hello.txt"
+1. **Anchored in African biological data.** Pathogen genomics, crop genomics,
+   populations underrepresented in reference panels, and workflows written for
+   constrained compute. 
 
-    script:
-    """
-    echo "Hello Saif" > hello.txt
-    cat missing_file.txt
-    """
-}
+2. **Failure modes are the most important content.** Every entry records where the model
+   hallucinated, what it silently assumed, and how that was detected.    
+   Entry 0001 has two: a Nextflow directive that appears not to exist, and a fix
+   that makes a pipeline report success on data that was never there.
 
-workflow {
-    SAY_HELLO()
-}
-```
+3. **Versioned and re-tested.** Every entry is stamped with model, version, and
+   date. The library is re-validated annually, so behavioural drift becomes
+   longitudinal data.
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/f844a69b-0b81-458c-9149-3aa99da840fe" />
+## Contributing takes about twenty minutes
 
-Example prompts that can be tested across different AI models:
+You need a laptop and access to any LLM. No compute cluster, no funding, no
+prior AI research experience.
 
-### Prompt 1 — Basic Debugging
+1. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) and the reference entry,
+   [`prompts/0001`](prompts/0001-nextflow-failing-process-debug.md).
+2. Copy [`PROMPT_TEMPLATE.md`](PROMPT_TEMPLATE.md), or open a
+   [new prompt issue](../../issues/new?template=new_prompt.yml) if you prefer a form.
+3. Fill every field, including **Failure modes observed**.
+4. Submit. Two peers will score it with [`SCORING_SHEET.md`](SCORING_SHEET.md).
 
-```
-This Nextflow DSL2 workflow generates an error during execution. Identify the issue, explain why it happens, and provide a corrected version of the code.
-[PASTE CODE HERE]
-```
+Extending an existing entry by adding a variant, or running one on a different model, counts as much as a new entry.
 
-### Prompt 2 — Bioinformatics Workflow Expert
-```
-You are an expert bioinformatics workflow engineer specialized in Nextflow and HPC systems. Analyze the following workflow, identify execution errors, explain the root cause, and rewrite the workflow following best practices for reproducibility and error handling.
+The contributors are named in `CONTRIBUTORS.md` and in the Zenodo record.
+The authorship on the resource paper follows [`AUTHORSHIP_CRITERIA.md`](AUTHORSHIP_CRITERIA.md).
 
-[PASTE CODE HERE]
-```
+## Structuration of an entry
 
-### Prompt 3 — Teaching Style
-```
-Explain this Nextflow error step-by-step as if teaching a beginner bioinformatics student. Show what causes the problem and how to fix it.
+Each entry consists in one **task**, several **prompt variants** for it, tested 
+across **more than one model**. Holding the task constant and varying the prompt 
+isolates the effect of the prompt rather than the effect of the problem. This 
+design comes from Saifeldeen Elshahawy's original prompt library, on which this 
+repository is built.
 
-[PASTE CODE HERE]
-```
-### Prompt 4 — Production-Level Optimization
-```
-Review the following Nextflow workflow for errors, robustness, and production-readiness. Improve the code by adding proper input validation, error handling, and cleaner workflow structure.
-
-[PASTE CODE HERE]
-```
-### Prompt 5 — Minimal Fix Only
-```
-Fix the error in this Nextflow script with the smallest possible code modification and explain the change briefly.
-
-[PASTE CODE HERE]
-```
-## Models Benchmarking
-Here, we'll test Prompt 5 — Minimal Fix Only On different AI Models, We'll use `ChatGPT plus`, and `Gemini 3.5 Flash`, to see how each model can debug that error.
-
-### User:
+## Structure
 
 ```
-User: Fix the error in this Nextflow script with the smallest possible code modification and explain the change briefly.
-```
-And then Paste the Code
-```
-#!/usr/bin/env nextflow
-
-nextflow.enable.dsl=2
-
-process SAY_HELLO {
-
-    output:
-    path "hello.txt"
-
-    script:
-    """
-    echo "Hello Saif" > hello.txt
-    cat missing_file.txt
-    """
-}
-
-workflow {
-    SAY_HELLO()
-}
-```
-### ChatGPT Response:
-
-The error happens because the script tries to read a file that does not exist:
-
-```bash
-cat missing_file.txt
+prompts/           one file per entry, NNNN-short-title.md
+PROMPT_TEMPLATE.md the entry template 
+SCORING_SHEET.md   the five-criterion review rubric
+CONTRIBUTING.md    how to submit and how review works
+AUTHORSHIP_CRITERIA.md
+CONTRIBUTORS.md    running list, updated after every session
+CITATION.cff
 ```
 
-The smallest possible fix is to create the file before reading it.
+## Domains
 
-```nextflow
-#!/usr/bin/env nextflow
+| Domain | Lead | Working session |
+|---|---|---|
+| Literature & writing | Yaa Adutwumwaa Obeng | October 2026 |
+| Coding & pipelines | Saifeldeen Elshahawy | November 2026 |
+| Genomics & annotation | Not yet confirmed | December 2026 |
 
-nextflow.enable.dsl=2
+## Licence and citation
 
-process SAY_HELLO {
+Prompts and documentation: **CC BY 4.0**. Cite via `CITATION.cff` or the Zenodo DOI.
 
-    output:
-    path "hello.txt"
+## Responsible use
 
-    script:
-    """
-    echo "Hello Saif" > hello.txt
-    touch missing_file.txt
-    cat missing_file.txt
-    """
-}
-
-workflow {
-    SAY_HELLO()
-}
-```
-
-### What changed?
-
-Added this line:
-
-```bash
-touch missing_file.txt
-```
-
-This creates an empty file named `missing_file.txt`, so the `cat` command no longer fails.
-
-### Result:
-
-<img width="783" height="282" alt="Screenshot from 2026-08-31 21-47-14" src="https://github.com/user-attachments/assets/016e518d-51a5-48c9-ac9e-a6dc825f1afe" />
-
-As you can see here. ChatGpt solution worked perfectly and fixed the root error
-
-### Gemeni Flash Response:
-The error in this script happens because `cat missing_file.txt` tries to read a file that doesn't exist. By default, Nextflow catches this non-zero exit code and crashes the pipeline.
-
-To fix it with the smallest possible modification, add the `ignoreError true` directive to the process. This tells Nextflow to carry on even if a command inside the script block fails.
-
-Here is the corrected script:
-
-```nextflow
-#!/usr/bin/env nextflow
-
-nextflow.enable.dsl=2
-
-process SAY_HELLO {
-    ignoreError true
-
-    output:
-    path "hello.txt"
-
-    script:
-    """
-    echo "Hello Saif" > hello.txt
-    cat missing_file.txt
-    """
-}
-
-workflow {
-    SAY_HELLO()
-}
-
-```
-
-### What changed?
-
-* **Added `ignoreError true`:** This directive allows the process to finish successfully and output `hello.txt`, ignoring the fact that `cat missing_file.txt` failed.
-*(Note: If you actually needed `missing_file.txt` to exist, you would instead pass it into the process via an `input:` block, but `ignoreError true` is the cleanest way to bypass the explicit failure in the script as written.)*
-
-### Result
-
-<img width="1472" height="454" alt="image" src="https://github.com/user-attachments/assets/844a6e86-101f-44eb-b963-baac4e780cf2" />
-
-Gemini response resulted with another error as the suggested directive is not even from Nextflow defined directives. The correct directive should be `errorStrategy 'ignore'`. and when running the workflow again with this directive it will work well as you can see below
-
-<img width="1472" height="485" alt="image" src="https://github.com/user-attachments/assets/6f88d69e-e135-42bf-a807-6beacd337514" />
-
-Look at the Note section as it is showing that the workflow had an ignored error but it continued to run without terminating the entire process.
-
-### Conclusion:
-The two AI models approached the same debugging task from substantially different perspectives. ChatGPT focused on addressing the immediate source of the pipeline failure by creating the missing file through a minimal code modification (`touch missing_file.txt`). Although this allows the workflow to proceed, it does not necessarily establish why the file was missing or whether creating an empty file is biologically or computationally appropriate. In contrast, Gemini 3.5 Flash approached the problem from a workflow-management perspective by suggesting the use of `ignoreError true`, allowing the process to continue despite the underlying error. However, this recommendation represents a form of AI hallucination, as Gemini invented `ignoreError true`, and it was not an appropriate or valid solution for the specific workflow context and would effectively mask a genuine pipeline failure rather than resolve its underlying cause.
-
-This example highlights how different AI models can adopt fundamentally different debugging philosophies: one may attempt to modify the input or environment to allow execution to continue, while another may prioritize workflow robustness by suppressing errors. Importantly, neither approach necessarily addresses the most critical diagnostic question: **why was the expected file missing in the first place, and was its absence intentional?** This demonstrates the importance of prompt engineering and human validation in AI-assisted bioinformatics coding, where the same prompt can lead to substantially different interpretations, proposed fixes, and recommendations for best practices. In computational biology workflows, where silently bypassing an error or generating artificial input files can compromise downstream analyses, AI-generated solutions should therefore be evaluated not only for whether they make a pipeline execute successfully, but also for whether they preserve the intended scientific logic of the workflow.
+Every entry is a starting point requiring human validation. The outputs may contain
+fabricated references, incorrect biological claims, or code that fails silently.
+Do not paste sensitive or identifiable data into third-party models. Please see the
+data-sovereignty guidance in `CONTRIBUTING.md`. Always declare AI use in the
+resulting publications.
