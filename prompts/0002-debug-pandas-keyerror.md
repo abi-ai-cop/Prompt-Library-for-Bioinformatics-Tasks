@@ -115,8 +115,7 @@ Each variant run in a separate, fresh chat on each model.
 | A | Gemini 2.5 Flash | No | No | No | No | **No** |
 | B | ChatGPT GPT-5.6 Luna | Yes | Yes | Yes | Yes | Withheld code pending inspection |
 | B | Gemini 2.5 Flash | Yes | Yes | Yes | Yes | **Yes — verified against the fixture** |
-| C | ChatGPT GPT-5.6 Luna, run 1 | No | No | No | No | No-op |
-| C | ChatGPT GPT-5.6 Luna, run 2 | No | No | No | No | Still fails |
+| C | ChatGPT GPT-5.6 Luna | No | No | No | No | Still fails |
 | C | Gemini 2.5 Flash | No | No | No | Yes | No change proposed |
 
 ### Response extracts
@@ -208,6 +207,11 @@ One fixture, one language, two hosted models, one run each. Single runs cannot
 distinguish a strategy effect from sampling variance. The variant effect here is
 large and consistent across two models from different families, but repeat runs 
 would strengthen it. No open-weight or locally deployed model has been tested.
+
+Variant C was re-run on ChatGPT to check an anomalous first result, which turned
+out to be an error in the prompt as pasted rather than model behaviour; the
+recorded run is the verified one. Contributors should expect to re-run anything
+surprising before recording it.
 
 Withholding the file is deliberate and is what the entry measures. In practice,
 supplying `head -n 5` of the CSV would likely resolve all three faults under any

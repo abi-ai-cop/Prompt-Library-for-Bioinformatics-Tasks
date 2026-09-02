@@ -25,7 +25,9 @@ The entries are marked tested only after they have been run and the results reco
 
 2. **Failure modes are the most important content.** Every entry records where the model
    hallucinated, what it silently assumed, and how that was detected.    
-   Entry 0001 has two: a Nextflow directive that appears not to exist, and a fix
+   Entry 0001 has three, all confirmed at runtime: a Nextflow directive that does
+   not exist and is rejected at parse time, a correct-looking alternative that lets
+   the workflow report success while its command fails, and a fix
    that makes a pipeline report success on data that was never there.
 
 3. **Versioned and re-tested.** Every entry is stamped with model, version, and
