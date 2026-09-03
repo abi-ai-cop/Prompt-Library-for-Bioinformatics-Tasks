@@ -13,7 +13,7 @@
 | **Organism or data type** | Not applicable; workflow code |
 | **Author** | Saifeldeen Elshahawy, University of Cape Town, ORCID: 0000-0003-0143-2596 |
 | **Date tested** | 2026-05-20 |
-| **Models tested** | ChatGPT Plus ({{GPT VERSION}}), Gemini 3.5 Flash |
+| **Models tested** | ChatGPT Plus (GPT-5.6 Luna), Gemini 3.5 Flash |
 | **Licence** | CC BY 4.0 |
 
 ## Objective
@@ -124,7 +124,7 @@ Variant E (minimal fix) run on two models:
 
 | Variant | Model + version | Correct? | Approach taken | Notes |
 |---|---|---|---|---|
-| E | ChatGPT Plus ({{VERSION}}) | Partly | Added `touch missing_file.txt` before the `cat` | Pipeline passes; underlying bug concealed |
+| E | ChatGPT Plus (GPT-5.6 Luna) | Partly | Added `touch missing_file.txt` before the `cat` | Pipeline passes; underlying bug concealed |
 | E | Gemini 3.5 Flash | No | Added a process directive to ignore the error | Directive does not exist; and the real equivalent would mask the failure |
 
 ### Response extracts
@@ -181,7 +181,7 @@ untested.
   fails — Gemini 3.5 Flash — 2026-05-20 — established from the Nextflow
   documentation, 2026-08-31.*
 - *Resolved a missing-input error by creating an empty placeholder file, allowing the
-  pipeline to report success on absent data — ChatGPT Plus ({{VERSION}}) — 2026-05-20
+  pipeline to report success on absent data — ChatGPT Plus (GPT-5.6 Luna) — 2026-05-20
   — detected by inspecting the corrected script.*
 - *Neither model requested context about the intended input before proposing a fix —
   both models — 2026-05-20 — detected on reading the responses.*
