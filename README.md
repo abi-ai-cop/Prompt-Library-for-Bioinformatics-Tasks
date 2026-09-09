@@ -61,6 +61,7 @@ repository is built.
 
 ```
 prompts/           one file per entry, NNNN-short-title.md
+sessions/          working session materials — lead kit and sprint task lists
 PROMPT_TEMPLATE.md the entry template 
 SCORING_SHEET.md   the five-criterion review rubric
 CONTRIBUTING.md    how to submit and how review works
