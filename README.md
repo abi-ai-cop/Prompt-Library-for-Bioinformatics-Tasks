@@ -9,7 +9,7 @@ bioinformatics, built by the **ABI Community of Practice on AI for Bioinformatic
 |---|---|---|
 | [0001](prompts/0001-nextflow-failing-process-debug.md) Nextflow process debugging | Coding & pipelines | **Tested** — 5 variants x 2 models, 3 failure modes confirmed at runtime |
 | [0002](prompts/0002-debug-pandas-keyerror.md) pandas KeyError debugging | Coding & pipelines | **Tested** — 3 variants × 2 models, reproducible fixture, 3 failure modes |
-| [0003](prompts/0003-literature-synthesis-table.md) Literature synthesis | Literature & writing | *Untested draft — Owner :Yaa Adutwumwaa Obeng* |
+| [0003](prompts/0003-literature-synthesis-table.md) Literature synthesis | Literature & writing | *Untested draft — owner needed* |
 | [0004](prompts/0004-plasmodium-variant-interpretation.md) *P. falciparum* variant interpretation | Genomics & annotation | *Untested draft — owner needed* |
 
 The entries are marked tested only after they have been run and the results recorded.
@@ -25,16 +25,14 @@ The entries are marked tested only after they have been run and the results reco
 
 2. **Failure modes are the most important content.** Every entry records where the model
    hallucinated, what it silently assumed, and how that was detected.    
-   Entry 0001 has three, all confirmed at runtime: a Nextflow directive that does
-   not exist and is rejected at parse time, a correct-looking alternative that lets
-   the workflow report success while its command fails, and a fix
+   Entry 0001 has two: a Nextflow directive that appears not to exist, and a fix
    that makes a pipeline report success on data that was never there.
 
 3. **Versioned and re-tested.** Every entry is stamped with model, version, and
-   date. The library is re-validated annually, so behavioural drift becomes
+   date. The library is re-validated annually, so behavioural drift is translate into
    longitudinal data.
 
-## Contributing takes about twenty minutes
+## Time of contribution : about twenty minutes
 
 You need a laptop and access to any LLM. No compute cluster, no funding, no
 prior AI research experience.
