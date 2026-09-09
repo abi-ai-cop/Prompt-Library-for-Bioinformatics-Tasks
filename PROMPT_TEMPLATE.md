@@ -110,7 +110,7 @@ versions where behaviour differed.
 
 ## Failure modes observed
 
-**This is as valuable as the prompts themselves. Do not leave empty.**
+**This is as important as the prompts themselves. Do not leave empty.**
 Format each as: *observation — model + version — date — how you detected it.*
 
 You must look especially for:

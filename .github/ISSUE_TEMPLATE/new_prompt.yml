@@ -13,7 +13,7 @@ body:
     id: title
     attributes:
       label: Short title
-      description: Task-first, e.g. "Debug a pandas KeyError in a counts pipeline"
+      description: Define-one-concrete-task, e.g. "Debug a pandas KeyError in a counts pipeline"
     validations: { required: true }
   - type: dropdown
     id: domain
@@ -41,7 +41,7 @@ body:
     attributes:
       label: Models and versions tested
       description: >-
-        Version matters. "GPT-5.5", not "ChatGPT". List every model you tried.
+        Version is important. "GPT-5.5", not "ChatGPT". List every model you tried.
     validations: { required: true }
   - type: input
     id: date
@@ -52,14 +52,14 @@ body:
     id: objective
     attributes:
       label: Objective
-      description: One sentence. What does this accomplish, for whom?
+      description: Describe in one sentence. What does this accomplish, for whom?
     validations: { required: true }
   - type: textarea
     id: context
     attributes:
       label: Biological and computational context
       description: >-
-        Assumed data type, experimental design, reference genome or annotation
+        State what the user is assumed to have: data type, experimental design, reference genome or annotation
         build, available compute, software installed. State assumptions explicitly.
     validations: { required: true }
   - type: textarea
@@ -67,8 +67,7 @@ body:
     attributes:
       label: The task
       description: >-
-        The exact shared input every variant is tested against — failing script,
-        variant table, paper set. This is what makes the variants comparable.
+        Define one concrete task, and give the exact input every variant is tested against: the failing script, the variant table, the paper set. The shared input is what makes the variants comparable.
       render: text
     validations: { required: true }
   - type: textarea
@@ -100,7 +99,7 @@ body:
     id: example
     attributes:
       label: Worked example
-      description: A short excerpt of a real response. Truncate rather than paste pages.
+      description: A short extract of a real response, enough to judge the comparison. Do not paste pages.
     validations: { required: true }
   - type: textarea
     id: limitations
