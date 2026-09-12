@@ -4,12 +4,17 @@
 
 ### 1. New Domains
 
-1. **Meta-analysis Domain**
+. **Meta-analysis Domain**
    Create a dedicated domain for prompts related to meta-analysis tasks and workflows.
 
-2. **Statistics and Algorithms Domain**
+. **Statistics and Algorithms Domain**
    Create a domain covering prompts related to statistical methods, algorithms, and computational approaches used in bioinformatics.
 
+. **Data Generation Domain**
+   Create a domain covering prompts related to generating data for simulation experiments
+
+. **Data Engineering Domain**
+   This domain will cover all prompts related to data engineering (e.g. data filtration, internal calculations, and tables operations)
 ---
 
 ### 2. Upcoming Hackathon
@@ -24,6 +29,7 @@
 * **Create a dedicated Slack channel for the AI CoP** to facilitate communication and collaboration among CoP members.
 * Create a dedicated **sub-channel for the Methods and Tools Working Group** to make it easier for members to coordinate and discuss ongoing activities.
 * Create additional **event-specific channels** for each planned event to facilitate communication, announcements, and coordination before and during the events.
+* Create a separate **private repository** for admins to store private data
 
 ---
 
