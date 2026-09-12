@@ -4,16 +4,20 @@
 
 ### 1. New Domains
 
-. **Meta-analysis Domain**
-   Create a dedicated domain for prompts related to meta-analysis tasks and workflows.
+* **Meta-analysis Domain**
+  
+   Create a dedicated domain for prompts related to meta-analysis.
 
-. **Statistics and Algorithms Domain**
+* **Statistics and Algorithms Domain**
+  
    Create a domain covering prompts related to statistical methods, algorithms, and computational approaches used in bioinformatics.
 
-. **Data Generation Domain**
+* **Data Generation Domain**
+  
    Create a domain covering prompts related to generating data for simulation experiments
 
-. **Data Engineering Domain**
+* **Data Engineering Domain**
+  
    This domain will cover all prompts related to data engineering (e.g. data filtration, internal calculations, and tables operations)
 ---
 
