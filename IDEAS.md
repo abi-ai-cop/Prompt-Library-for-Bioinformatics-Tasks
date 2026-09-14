@@ -43,3 +43,10 @@
 * A public announcement could highlight the project's goals, current activities, and opportunities for contribution.
 * This could help increase the visibility of the CoP, expand its reach, and attract submissions from researchers and groups from different institutions and communities.
 * It could also help diversify and expand the Shared Prompts Library by encouraging contributions from a wider range of users and organizations.
+
+---
+
+### 5. Consultation 
+
+* Assisting researcher by building their workflows or pipelines.
+* Assist with data analysis with those has no experience in bioinformatics
