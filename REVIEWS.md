@@ -72,4 +72,55 @@ what did not work.
 ---
 
 ### Weakly supervised hypothesis-driven machine-learning pipelines
-**Submitter**
+**Submitter:** Oleg Reva, University of Pretoria (0000-0002-5459-2772)
+
+**Review by** @aidayo — 2026-10-19
+
+| Criterion | /5 |
+|---|---|
+| Clarity | 5 |
+| Effectiveness | 2 |
+| Reusability | 5 |
+| Robustness | 1 |
+| Documentation | 4 |
+| **Total** | **17/25** |
+
+**Reviewer notes** 
+
+**Strongest aspect:** the explicit rationale for why Variant E scores lower on
+Robustness. The addition of a "Potential AI/prompt failure modes" list after review
+is correct.
+
+**Must fix before acceptance:**
+
+1. **No model output is recorded.** The worked example describes your published
+   S. enterica pipeline. We are rather expecting what ChatGPT returned. A short 
+   extract of the actual ChatGPT response would increase Effectiveness from 2 to 4.
+2. **Cross-model comparison** is outstanding. Just adding pne variant on a second model
+   would complete the entry.
+3. The AI failure modes are listed as *potential* rather than observed. Did they actually
+   occur or not?
+
+**Would improve it further:** Comparing what the models propose against your published
+pipeline as ground truth would provide an independent standard to measure against.
+
+Review by @saifeldeen-bio — 2026-10-22
+Criterion | Score
+-- | --
+Clarity | 5
+Effectiveness | 3
+Reusability | 5
+Robustness | 2
+Documentation | 5
+Total | 20/25
+
+#### Reviewer notes
+
+**Strongest aspect:** The prompt is clearly structured and provides a well-defined framework for evaluating how an AI model handles the task. The instructions, worked example, and explicit procedures for handling uncertain predictions and insufficient data provide useful criteria for assessing model behaviour and identifying potential failure modes.
+
+**Must fix before acceptance:** The submission has only been tested with one AI model, making it difficult to assess whether the prompt performs consistently across different models. Test at least two models using identical inputs and document their outputs, differences in behaviour, adherence to the instructions, and observed failure modes in a dedicated Results section. The comparison should identify where the models agree, disagree, fail to follow the prompt, or produce unsupported conclusions.
+
+**Would improve it further:** Distinguish between failures caused by ambiguous or incomplete prompt instructions and those arising from model-specific limitations. Where relevant, include concrete examples of these failures and explain whether the prompt could be improved to prevent or reduce them.
+
+---
+
