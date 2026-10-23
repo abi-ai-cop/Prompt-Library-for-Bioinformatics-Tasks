@@ -124,3 +124,51 @@ Total | 20/25
 
 ---
 
+### Automatic core/accessory genome and pathway analysis using Panaroo, MAUVE, and EggNOC
+**Submitter:** Oleg Reva, University of Pretoria (0000-0002-5459-2772)
+
+**Review by** @aidayo — 2026-10-19
+
+| Criterion | /5 |
+|---|---|
+| Clarity | 5 |
+| Effectiveness | 2 |
+| Reusability | 5 |
+| Robustness | 1 |
+| Documentation | 4 |
+| **Total** | **17/25** |
+
+**Reviewer notes**
+
+**Strongest aspect:** the constraints written into the prompts are 
+Very well-targeted.
+
+**Must fix before acceptance:**
+
+1. **Cross-model comparison** says "to be performed".
+2. **No recorded output**, Which failure modes were observed, and which
+   are anticipated?
+3. "EggNOC" in the title should be **eggNOG**.
+
+**Would improve it further:** the task section has 26 numbered requirements.
+It makes the entry hard to reuse selectively. Splitting the core/accessory
+identification from the pathway representation analysis would give two entries that
+could be used independently.
+
+**Review by** @saifeldeen-bio — 2026-10-19
+Criterion | Score
+-- | --
+Clarity | 5
+Effectiveness | 1
+Reusability | 5
+Robustness | 3
+Documentation | 5
+Total | 19/25
+
+**Reviewer notes**
+
+**Strongest aspect:** The prompts anticipate several important technical challenges, including Mauve alignment coordinates, KEGG module logic, pathway coverage scoring, and appropriate statistical testing.
+
+**Must fix before acceptance:** The submission needs a documented comparison of at least two AI models, including a Results section describing their performance on identical data and highlighting differences in the generated implementations.
+
+**Would improve it further:** The extensive list of 26 requirements makes the task difficult to adapt to narrower research needs. Separating genome partitioning from downstream functional and pathway analysis would make both components more modular and independently reusable.
