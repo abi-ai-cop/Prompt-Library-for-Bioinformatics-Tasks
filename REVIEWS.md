@@ -172,3 +172,51 @@ Total | 19/25
 **Must fix before acceptance:** The submission needs a documented comparison of at least two AI models, including a Results section describing their performance on identical data and highlighting differences in the generated implementations.
 
 **Would improve it further:** The extensive list of 26 requirements makes the task difficult to adapt to narrower research needs. Separating genome partitioning from downstream functional and pathway analysis would make both components more modular and independently reusable.
+
+---
+
+### Lift a variant call set from GRCh37 to GRCh38 without corrupting it
+**Submitter:** Chioma Oselu
+
+**Review by** @aidayo — 2026-10-19
+
+| Criterion | /5 |
+|---|---|
+| Clarity | 5 |
+| Effectiveness | 1 |
+| Reusability | 4 |
+| Robustness | 1 |
+| Documentation | 2 |
+| **Total** | **13/25** |
+
+**Reviewer notes**
+
+**Strongest aspect:** the biological and computational context is very well written. 
+This task deserves an entry, and the judgement that re-mapping by rsID or re-calling 
+against the correct build beats converting is also an interesting guidance.
+
+**Must fix before acceptance:**
+
+1. **Run it.** Worked example, known limitations, failure modes and validation are
+   all TBC, and the date tested is empty.
+2. **Model version** — add the full version for "Opus 4.8".
+3. **Author field** needs an ORCID, and the affiliation.
+4. **Cross-model comparison** — the entry's a good candidate for two models/
+
+**Would improve it further:** Variant B asks the model to review a colleague's 
+conversion that completed with no errors. That is a well-designed trap, because 
+the correct answer is to not trust the absence of errors. It would be interesting
+To record explicitly whether each model falls into it.
+
+**Review by** @saifeldeen-bio — 2026-10-28
+
+Criterion | Score
+-- | --
+Clarity | 3
+Effectiveness | 3
+Reusability | 4
+Robustness | 2
+Documentation | 2
+Total | 14/25
+
+</div></div></div><p><strong><span>Reviewer notes</span></strong></p><p><strong><span>Strongest aspect:</span></strong><span> The prompt highlights important risks of genome-build conversion, particularly coordinate conventions, contig naming mismatches, unmapped variants, and allele mismatches in inverted regions. The two variants provide useful approaches for beginners and experienced bioinformaticians.</span></p><p><strong><span>Must fix before acceptance:</span></strong><span> The submission has not been tested, and no cross-model comparison has been performed. Test both prompt variants using at least two AI models, record their outputs, and include a Results section documenting their behaviour and any errors.</span></p><p><strong><span>Would improve it further:</span></strong><span> Complete the Worked example, Known limitations, Failure modes observed, and Validation performed sections. Include a small example VCF and demonstrate how to verify the lifted coordinates and REF alleles against the GRCh38 reference. Also clarify the input requirements and expected outputs so the workflow can be reproduced and independently evaluated.</span></p></body></html>
