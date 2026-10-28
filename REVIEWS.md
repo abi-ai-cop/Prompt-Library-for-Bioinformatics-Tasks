@@ -219,4 +219,63 @@ Robustness | 2
 Documentation | 2
 Total | 14/25
 
-</div></div></div><p><strong><span>Reviewer notes</span></strong></p><p><strong><span>Strongest aspect:</span></strong><span> The prompt highlights important risks of genome-build conversion, particularly coordinate conventions, contig naming mismatches, unmapped variants, and allele mismatches in inverted regions. The two variants provide useful approaches for beginners and experienced bioinformaticians.</span></p><p><strong><span>Must fix before acceptance:</span></strong><span> The submission has not been tested, and no cross-model comparison has been performed. Test both prompt variants using at least two AI models, record their outputs, and include a Results section documenting their behaviour and any errors.</span></p><p><strong><span>Would improve it further:</span></strong><span> Complete the Worked example, Known limitations, Failure modes observed, and Validation performed sections. Include a small example VCF and demonstrate how to verify the lifted coordinates and REF alleles against the GRCh38 reference. Also clarify the input requirements and expected outputs so the workflow can be reproduced and independently evaluated.</span></p></body></html>
+**Reviewer notes**
+**Strongest aspect:** The prompt highlights important risks of genome-build conversion, particularly coordinate conventions, contig naming mismatches, unmapped variants, and allele mismatches in inverted regions. The two variants provide useful approaches for beginners and experienced bioinformaticians.
+
+**Must fix before acceptance:** The submission has not been tested, and no cross-model comparison has been performed. Test both prompt variants using at least two AI models, record their outputs, and include a Results section documenting their behaviour and any errors.
+
+**Would improve it further:** Complete the Worked example, Known limitations, Failure modes observed, and Validation performed sections. Include a small example VCF and demonstrate how to verify the lifted coordinates and REF alleles against the GRCh38 reference. Also clarify the input requirements and expected outputs so the workflow can be reproduced and independently evaluated.
+
+---
+### script to minimize structure model
+**Submitter:** fakher
+
+**Review by** @aidayo — 2026-10-19
+
+| Criterion | /5 |
+|---|---|
+| Clarity | 4 |
+| Effectiveness | 1 |
+| Reusability | 4 |
+| Robustness | 1 |
+| Documentation | 3 |
+| **Total** | **13/25** |
+
+**Reviewer notes** 
+
+**Strongest aspect:** the five variants are very well differentiated by strategy, and
+the biological framing is sound.
+
+**Must fix before acceptance:**
+
+1. **Model version.** "GPT" is recorded. We need the version string. Without it,
+   the entry cannot be re-tested later.
+2. **Author field** reads "fakher". Please add full name, affiliation and ORCID.
+3. **Cross-model comparison** is empty.
+4. **Failure modes observed** lists failure modes of *energy minimisation* — PDB
+   preparation failures, force-field parameterisation, non-convergence. These are
+   interesting but they should be listed under Known limitations. This section asks
+   where the *language model* went wrong. For example, did it invent an OpenMM or 
+   GROMACS parameter? 
+5. **Validation performed** is it prospective ("the minimized structure is
+   evaluated by…"), or was it actually done ?
+
+**Would improve it further:** running one variant on two models and recording what 
+each returned.
+
+**Review by** @saifeldeen-bio — 2026-10-28
+Criterion | Score
+-- | --
+Clarity | 3
+Effectiveness | 2
+Reusability | 3
+Robustness | 2
+Documentation | 2
+Total | 12/25
+
+**Reviewer notes**
+**Strongest aspect:** The submission identifies relevant challenges in protein structure minimization and proposes useful quality checks, including RMSD, steric clashes, and Ramachandran analysis.
+
+**Must fix before acceptance:** The cross-model comparison section incorrectly contains prompt variants rather than a comparison between different AI models. Test the same prompt and inputs with at least two models, then document their outputs, differences, and observed failures. The reported failure modes describe potential issues with the structural modelling workflow, not failures observed in the tested AI models.
+
+**Would improve it further:** Provide a reproducible worked example with an actual PDB input and concrete results. Clarify which validation metrics were actually measured and which are only proposed, and complete the documentation with evidence from the experiments.
