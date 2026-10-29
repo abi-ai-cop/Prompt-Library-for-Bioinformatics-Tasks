@@ -279,3 +279,55 @@ Total | 12/25
 **Must fix before acceptance:** The cross-model comparison section incorrectly contains prompt variants rather than a comparison between different AI models. Test the same prompt and inputs with at least two models, then document their outputs, differences, and observed failures. The reported failure modes describe potential issues with the structural modelling workflow, not failures observed in the tested AI models.
 
 **Would improve it further:** Provide a reproducible worked example with an actual PDB input and concrete results. Clarify which validation metrics were actually measured and which are only proposed, and complete the documentation with evidence from the experiments.
+
+---
+### Using the wrong FastQC input format
+**Submitter:** Yossra-ElTony
+
+**Review by** @aidayo — 2026-10-19
+
+| Criterion | /5 |
+|---|---|
+| Clarity | 4 |
+| Effectiveness | 4 |
+| Reusability | 3 |
+| Robustness | 4 |
+| Documentation | 3 |
+| **Total** | **18/25** |
+
+**Reviewer notes**
+
+**Strongest aspect:** the error analysis is excellent. 
+There are five variants on two models.
+
+**Must fix before acceptance:**
+
+1. **Author field** contains only an ORCID URL. Please add name and affiliation.
+2. **Expected output format** currently shows an error message rather than a
+   description of what a correct response looks like. The error should go in the
+   task section.
+3. **Failure modes observed** describes Gemini's teaching-style explanation rather
+   than identifying a model error, such as a model that invents a FastQC flag, miss one
+   of the three faults, or produce code that still fails
+4. Known limitations says variants "A–D", while there are five variants (A–E).
+
+**Would improve it further:** the comparison is mainly qualitative ("more
+detailed", "no significant differences"). It would improve it to add a small table 
+recording, per variant and model, which of the three faults were caught.
+
+**Review by** @saifeldeen-bio — 2026-10-28
+Criterion | Score
+-- | --
+Clarity | 4
+Effectiveness | 3
+Reusability | 4
+Robustness | 3
+Documentation | 3
+Total | 17/25
+
+**Reviewer notes**
+**Strongest aspect:** The submission compares two named AI models across five prompt framings and describes differences in their debugging explanations and code improvements. It also reports a specific observed issue and includes a Bash reproduction environment.
+
+**Must fix before acceptance:** The author field is incomplete: provide the author's full name and affiliation alongside the ORCID. Also, verify and record the exact model version identifiers, as the current names may not be sufficient for reproducibility. The cross-model comparison would be stronger with actual outputs or a structured comparison of the errors each model identified, the corrections made, and any incorrect or missing fixes. The validation section confirms reproduction of the original failure but does not clearly document tests of the corrected scripts or their results.
+
+**Would improve it further:** Clarify the discrepancy between the stated FASTQ filenames and the filenames used in the script, and ensure the expected output reflects the full debugging task rather than just one error message.
