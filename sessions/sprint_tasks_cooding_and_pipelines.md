@@ -21,43 +21,25 @@ Everything here should be achievable within the 40-minute sprint. You do not nee
 
 ## Tasks
 
-### Task 1 — Debugging a bioinformatics script
+### Task 1 — Debugging a real bioinformatics script
+What you need: A Python, R, Bash, or Nextflow script from your own work that produces an error, together with its error message.
 
-**What you need:** A Python, R, Bash, or Nextflow script from your own work that produces an error, together with its error message.
+**Prompts:** 
+- A. Minimal instruction:
+  This script produces the following error. Identify the problem and suggest a fix.
+- B. Expert researcher:
+  Act as an experienced bioinformatics software engineer. Examine the script and error message. Identify the root cause, explain your reasoning, and suggest a solution. State any assumptions you make.
+- C. Minimal-change-only:
+  Debug this script while making the smallest possible changes. Do not rewrite the entire script or modify unrelated sections. Explain every modification.
 
-If you don't have one, use this example:
-
-```python
-genes = ["BRCA1", "TP53", "EGFR", "MYC"]
-
-for gene in genes
-    print(gene)
-```
-
-**Prompts:**
-
-- **A. Minimal instruction:**
-
-  *This script produces the following error. Identify the problem and suggest a fix.*
-
-- **B. Explanation-focused:**
-
-  *Find the error in this code, correct it, and explain why the original code failed. Explain the correction in simple language.*
-
-- **C. Minimal-change-only:**
-
-  *Debug this script while making the smallest possible changes. Do not rewrite the entire script or modify unrelated sections. Explain every modification.*
-
-**Models:** 2
+Models: 2
 
 **Record:**
-
-- Did the model identify the actual problem?
-- Did it provide working code?
+- Did the model identify the actual root cause?
+- Did it suggest a fix that resolved the error or merely suppressed it?
 - Did it rewrite working sections unnecessarily?
 - Did it introduce new errors while fixing the original problem?
-- Which model provided the clearest explanation?
-
+- Did it explain assumptions or make unsupported assumptions about the input data?
 ---
 
 ### Task 2 — Building a simple RNA-seq pipeline using Nextflow
