@@ -129,7 +129,7 @@ A publicly available BAM file from the 1000 Genomes Project:
 
 ---
 
-### C 4 — Generating bioinformatics commands
+### C 4 — Do your Analysis and Validate tools parameters
 
 **What you need:** A BAM file and a bioinformatics tool.
 
@@ -209,7 +209,7 @@ Example files:
 
 ---
 
-### C 6 — Writing tests for bioinformatics scripts
+### C 6 — Generating test dataset for bioinformatics scripts
 
 **What you need:** A small Python or R script that performs a bioinformatics task, such as filtering variants, calculating read-depth statistics, or processing gene annotations, from your own work.
 
