@@ -21,7 +21,7 @@ Everything here should be achievable within the 40-minute sprint. You do not nee
 
 ## Tasks
 
-### Task 1 — Debugging a real bioinformatics script
+### C 1 — Debugging a real bioinformatics script
 What you need: A Python, R, Bash, or Nextflow script from your own work that produces an error, together with its error message.
 
 **Prompts:** 
@@ -42,7 +42,7 @@ Models: 2
 - Did it explain assumptions or make unsupported assumptions about the input data?
 ---
 
-### Task 2 — Building a simple RNA-seq pipeline using Nextflow
+### C 2 — Building a simple RNA-seq pipeline using Nextflow
 
 **What you need:** The following publicly available paired-end FASTQ files.
 
@@ -63,7 +63,7 @@ Gene annotation: [Download GTF](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000
 
 - Untreated samples: GSM461176, GSM461177, GSM461178, GSM461182.
 - Treated samples (*Pasilla* gene depleted by RNAi): GSM461179, GSM461180, GSM461181.
-
+Tasks
 Additional sample information is available from [NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/).
 
 **Note:** The two supplied FASTQ pairs are intended for testing the pipeline. They represent only one sample per condition, so they are not sufficient for reliable biological differential-expression analysis. The other study samples should be included for a proper analysis.
@@ -95,7 +95,7 @@ Additional sample information is available from [NCBI GEO](https://www.ncbi.nlm.
 
 ---
 
-### Task 3 — Running bioinformatics analysis with limited computing resources
+### C 3 — Running bioinformatics analysis with limited computing resources
 
 **What you need:** A Linux computer with limited resources.
 
@@ -129,7 +129,7 @@ A publicly available BAM file from the 1000 Genomes Project:
 
 ---
 
-### Task 4 — Generating bioinformatics commands
+### C 4 — Generating bioinformatics commands
 
 **What you need:** A BAM file and a bioinformatics tool.
 
@@ -169,7 +169,7 @@ Examples of tools:
 
 ---
 
-### Task 5 — Working with genomic file formats
+### C 5 — Working with genomic file formats
 
 **What you need:** A VCF file and a GFF annotation file.
 
@@ -209,7 +209,7 @@ Example files:
 
 ---
 
-### Task 6 — Writing tests for bioinformatics scripts
+### C 6 — Writing tests for bioinformatics scripts
 
 **What you need:** A small Python or R script that performs a bioinformatics task, such as filtering variants, calculating read-depth statistics, or processing gene annotations, from your own work.
 
@@ -233,7 +233,7 @@ Example files:
 
 ---
 
-### Task 7 — Improving pipeline reproducibility and portability
+### C 7 — Improving pipeline reproducibility and portability
 
 **What you need:** An existing bioinformatics script or pipeline that runs successfully on your computer but is difficult to reproduce on another machine.
 
@@ -259,7 +259,7 @@ Example files:
 
 ---
 
-### Task 8 — Diagnosing silent failures and validating biological outputs
+### C 8 — Diagnosing silent failures and validating biological outputs
 
 **What you need:** A script or small pipeline that completes without errors but produces suspicious results. Examples include an empty VCF, unexpectedly low variant counts, missing genes, or unusually high numbers of detected variants.
 
